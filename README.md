@@ -1,66 +1,56 @@
-## Foundry
+# ERC20 Token with Vesting and Staking
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project includes:
 
-Foundry consists of:
+- ✅ A custom ERC20 token (`MyToken`)
+- 🔒 A vesting contract to release tokens over time
+- 💰 A staking contract to allow users to earn rewards
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Built using [Foundry](https://book.getfoundry.sh/) and deployed to the **Sepolia testnet**.
 
-## Documentation
+---
 
-https://book.getfoundry.sh/
+## 🛠 Requirements
 
-## Usage
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- An RPC provider (e.g. [Alchemy](https://www.alchemy.com/))
+- Sepolia ETH (get from [faucet](https://sepoliafaucet.com/))
 
-### Build
+---
 
-```shell
-$ forge build
+## 📦 Installation
+
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+forge install
 ```
 
-### Test
+---
 
-```shell
-$ forge test
+## 🧪 Running Tests
+
+```bash
+forge test
 ```
 
-### Format
+---
 
-```shell
-$ forge fmt
+## 🔐 Create `.env` File
+
+Create a `.env` file in the root directory of your project and add:
+
+```env
+PRIVATE_KEY=your_private_key
+RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your_project_id
 ```
 
-### Gas Snapshots
+---
 
-```shell
-$ forge snapshot
-```
+## 🚀 Deploy Contracts
 
-### Anvil
+Run the deployment script:
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge script script/Deploy.s.sol:Deploy --rpc-url $RPC_URL --broadcast
 ```
